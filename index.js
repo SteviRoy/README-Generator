@@ -30,15 +30,20 @@ const questions = [
     message: 'Provide contribution credits:',
   },
   {
-    type: 'input',
-    name: 'tests',
-    message: 'Provide test instructions:',
-  },
-  {
     type: 'list',
     name: 'license',
     message: 'Choose a license for your project:',
     choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+  },
+  {
+    type: 'list',
+    name: 'features',
+    message: 'List features your project:',
+  },
+  {
+    type: 'input',
+    name: 'tests',
+    message: 'Provide test instructions:',
   },
   {
     type: 'input',
@@ -60,8 +65,9 @@ function writeToFile(fileName, data) {
     installation,
     usage,
     credits,
-    tests,
     license,
+    features,
+    tests,
     username,
     email,
   } = data;
@@ -70,7 +76,51 @@ function writeToFile(fileName, data) {
     license === 'MIT'
       ? '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
       : '';
+      const contents = `# ${title}
 
+      ${licenseBadge}
+      
+      ## Description
+      
+      ${description}
+      
+      ## Table of Contents
+      
+      - [Installation](#installation)
+      - [Usage](#usage)
+      - [Credits](#credits)
+      - [License](#license)
+      - [Features](#features)
+      - [Tests](#tests)
+      - [Questions](#questions)
+      
+      ## Installation
+      
+      ${installation}
+      
+      ## Usage
+      
+      ${usage}
+      
+      ## Credits
+      
+      ${credits}
+      
+      ## License
+      
+      This project is licensed under the ${license} license.
+      
+      ## Features
+      
+      ${features}
+      
+      ## Tests
+      
+      ${tests}
+      
+      ## Questions/Contribute
+      
+      If you have any questions or want to contribute, please feel free to reach out to me via email (${email}) or visit my [GitHub profile](https://github.com/${username}).`;
 }
 
 // TODO: Create a function to initialize app
