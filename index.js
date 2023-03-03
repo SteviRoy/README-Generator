@@ -40,6 +40,16 @@ const questions = [
     message: 'Choose a license for your project:',
     choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD 3', 'None'],
   },
+  {
+    type: 'input',
+    name: 'username',
+    message: 'What is your GitHub username?',
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email address?',
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -49,12 +59,18 @@ function writeToFile(fileName, data) {
     description,
     installation,
     usage,
-    contributing,
+    credits,
     tests,
     license,
     username,
     email,
   } = data;
+
+  const licenseBadge =
+    license === 'MIT'
+      ? '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+      : '';
+
 }
 
 // TODO: Create a function to initialize app
