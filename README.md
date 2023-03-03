@@ -10,7 +10,7 @@ This application is a command-line tool that generates a professional README fil
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Contributions](#contributions)
 - [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)

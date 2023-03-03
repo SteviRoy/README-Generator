@@ -25,8 +25,13 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'credits',
+    name: 'contributions',
     message: 'Provide contribution guidelines:',
+  },
+  {
+    type: 'input',
+    name: 'credits',
+    message: 'Provide credits:',
   },
   {
     type: 'input',
@@ -58,6 +63,7 @@ function writeToFile(fileName, data) {
     description,
     installation,
     usage,
+    contributions,
     credits,
     tests,
     license,
@@ -82,7 +88,7 @@ ${description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Contributions](#contributions)
 - [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
@@ -94,6 +100,10 @@ ${installation}
 ## Usage
 
 ${usage}
+
+## Contributions
+
+${contributions}
 
 ## Credits
 
