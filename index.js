@@ -121,6 +121,10 @@ function writeToFile(fileName, data) {
       ## Questions/Contribute
       
       If you have any questions or want to contribute, please feel free to reach out to me via email (${email}) or visit my [GitHub profile](https://github.com/${username}).`;
+
+      fs.writeFile(fileName, contents, (err) =>
+    err ? console.error(err) : console.log('README file generated!')
+  );
 }
 
 // TODO: Create a function to initialize app
